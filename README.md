@@ -1,7 +1,5 @@
 # social-media-client
 Workflow-CA
-# social-media-client
-Workflow-CA
 # Initial setup steps
 
 install prettier as dev dependency
