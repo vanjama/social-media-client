@@ -19,5 +19,8 @@ export default class LocalStorageMock {
     delete this.store[key];
   }
 }
+<<<<<<< Updated upstream
 
 
+=======
+>>>>>>> Stashed changes

@@ -14,5 +14,8 @@ export function fetchFailure(statusCode = 404, status = "Not Found") {
     status,
   });
 }
+<<<<<<< Updated upstream
 
 
+=======
+>>>>>>> Stashed changes
