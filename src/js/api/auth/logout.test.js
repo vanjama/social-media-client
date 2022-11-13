@@ -4,13 +4,8 @@ import { logout } from "../logout";
 
 global.localStorage = new LocalStorageMock();
 
-<<<<<<< Updated upstream
-const TOKEN_KEY = "TOKEN";
-const TOKEN_VALUE = "Fhhhlh";
-=======
 const TOKEN_KEY = "token";
 const TOKEN_VALUE = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9";
->>>>>>> Stashed changes
 
 beforeAll(() => {
   storage.save(TOKEN_KEY, TOKEN_VALUE);
