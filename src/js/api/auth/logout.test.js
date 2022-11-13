@@ -5,7 +5,7 @@ import { logout } from "../logout";
 global.localStorage = new LocalStorageMock();
 
 const TOKEN_KEY = "TOKEN";
-const TOKEN_VALUE = "Fhhhgh";
+const TOKEN_VALUE = "Fhhhlh";
 
 beforeAll(() => {
   storage.save(TOKEN_KEY, TOKEN_VALUE);

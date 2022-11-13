@@ -14,3 +14,5 @@ export function fetchFailure(statusCode = 404, status = "Not Found") {
     status,
   });
 }
+
+

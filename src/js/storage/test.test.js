@@ -4,7 +4,7 @@ import * as storage from "../index";
 global.localStorage = new LocalStorageMock();
 
 describe("storage", () => {
-  it("saves a profile object to storage", () => {
+  it("Saves a profile object to storage", () => {
     const key = "profile";
     const value = {
       name: "name",

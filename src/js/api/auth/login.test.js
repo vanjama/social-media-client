@@ -34,10 +34,3 @@ test("data is added into local storage", () => {
     setLocalStorage(mockId, mockJson);
     expect(localStorage.getItem(mockId)).toEqual(JSON.stringify(mockJson));
     });
-
-
-describe("isLoggedIn", () => {
-  it("returns false when the token cannot be found", () => {
-    expect(isLoggedIn()).not.toBeTruthy();
-  });
-});
