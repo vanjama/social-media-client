@@ -1,22 +1,3 @@
-<<<<<<< Updated upstream
-import { login } from "./login";
-import { isLoggedIn } from "../state.js";
-
-const email = 'imsdale@stud.noroff.no';
-const password = 'Imsdal2020!';
-
-const data = { email: email, password: password };
-
-
-function fetchSuccess(
-  status = 201,
-  statusText = 'Succeeded'
-) {
-  return Promise.resolve({
-    ok: true,
-    status,
-    statusText,
-=======
 import { login } from "../src/js/api/auth/login";
 import { LocalStorageMock } from "../src/js/storage/localStorageMock";
 
@@ -33,24 +14,7 @@ function fetchSuccess() {
     ok: true,
     status: 200,
     statusText: "fetch OK",
->>>>>>> Stashed changes
     json: () => Promise.resolve(data),
-  });
-}
-
-<<<<<<< Updated upstream
-
-describe('Login', () => {
-  it('Success', async () => {
-    global.fetch = jest.fn(() => fetchSuccess());
-    const item = await login(data);
-    expect(item).toBe(data);
-=======
-function fetchFailed() {
-  return Promise.resolve({
-    ok: false,
-    status: 401,
-    statusText: "no response",
   });
 }
 
@@ -62,19 +26,4 @@ describe("login", () => {
     expect(user).toEqual(data);
     expect(user.token).toEqual(global.localStorage.getItem("token"));
   });
-
-  it("Fails to login user", async () => {
-    global.fetch = jest.fn(() => fetchFailed());
-    await expect(login(BAD_TEST_EMAIL, BAD_TEST_PSW)).rejects.toThrow(
-      "Unauthorized"
-    );
->>>>>>> Stashed changes
-  });
 });
-
-test("data is added into local storage", () => {
-    const mockId = "1";
-    const mockJson = { data: "json data" };
-    setLocalStorage(mockId, mockJson);
-    expect(localStorage.getItem(mockId)).toEqual(JSON.stringify(mockJson));
-    });
