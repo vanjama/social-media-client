@@ -1,11 +1,8 @@
 {
-    "cSpell.words": [
-        "Imsdal",
-        "Imsdale",
-        "localstorage",
-        "mochawesome",
-        "Noroff",
-        "popperjs",
-        "XVCJ"
-    ]
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.validate": ["javascript"]
 }
