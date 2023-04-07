@@ -6,7 +6,7 @@ const invalidPassword = 'pasword';
 
 describe('Logging out', () => {
   it('logs out', () => {
-    cy.visit('http://127.0.0.1:5500/');
+    cy.visit('/');
     cy.wait(500);
     cy.get('#registerForm .btn-close').click();
     cy.wait(400);
