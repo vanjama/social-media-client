@@ -1,6 +1,14 @@
-[![Automated E2E Testing](https://github.com/vanjama/social-media-client/actions/workflows/e2e-test.yml/badge.svg)](https://github.com/vanjama/social-media-client/actions/workflows/e2e-test.yml)
-[![Automated Unit Testing](https://github.com/vanjama/social-media-client/actions/workflows/unit-test.yml/badge.svg)](https://github.com/vanjama/social-media-client/actions/workflows/unit-test.yml)
-[![pages-build-deployment](https://github.com/vanjama/social-media-client/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/vanjama/social-media-client/actions/workflows/pages/pages-build-deployment)
+
+# social-media-client
+Workflow-CA
+
+
+[![Automated E2E Testing](https://github.com/vanjama/social-media-client/actions/workflows/e2e-test.yml/badge.svg?branch=CA-WORKFLOW)](https://github.com/vanjama/social-media-client/actions/workflows/e2e-test.yml)
+
+[![Automated Unit Testing](https://github.com/vanjama/social-media-client/actions/workflows/unit-test.yml/badge.svg?branch=CA-WORKFLOW)](https://github.com/vanjama/social-media-client/actions/workflows/unit-test.yml)
+
+[![Deploy static content to Pages](https://github.com/vanjama/social-media-client/actions/workflows/pages.yml/badge.svg)](https://github.com/vanjama/social-media-client/actions/workflows/pages.yml)
+
 # Initial setup steps
 
 install prettier as dev dependency
