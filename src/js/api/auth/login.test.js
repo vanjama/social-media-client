@@ -1,5 +1,5 @@
 import { login } from './login';
-import { LocalStorageMock } from "../mocks/storage";
+import { LocalStorageMock } from '../../storage/localStorage.js';
 
 
 global.localStorage = new LocalStorageMock();
