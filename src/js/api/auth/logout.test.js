@@ -1,24 +1,18 @@
-import LocalStorageMock from "../../../mocks/localStorage";
-import * as storage from "../../../storage/index";
-import { logout } from "../logout";
+import { logout } from './logout.js';
+import { save } from '../../storage/save.js';
+import { load } from '../../storage/load.js';
+import { LocalStorageMock } from '../../storage/localStorage.js';
 
 global.localStorage = new LocalStorageMock();
 
-const TOKEN_KEY = "token";
-const TOKEN_VALUE = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9";
-
-beforeAll(() => {
-  storage.save(TOKEN_KEY, TOKEN_VALUE);
-});
-
-afterAll(() => {
-  storage.remove(TOKEN_KEY);
-});
-
-describe("logout", () => {
-  it("removes token", () => {
-    expect(storage.load(TOKEN_KEY)).toEqual(TOKEN_VALUE);
+describe('logout', () => {
+  it('Clears the token from browser storage', () => {
+    const key = 'token';
+    const value = 'my string';
+    save(key, value);
+    expect(load(key)).toEqual(value);
+    expect(localStorage.getItem(key)).toEqual(JSON.stringify(value));
     logout();
-    expect(storage.load(TOKEN_KEY)).toEqual(null);
+    expect(localStorage.getItem(key)).toEqual(null);
   });
 });
