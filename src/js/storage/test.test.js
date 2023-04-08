@@ -1,4 +1,4 @@
-import LocalStorageMock from "../../mocks/localStorage";
+import LocalStorageMock from "../mocks/localStorage";
 import * as storage from "../index";
 
 global.localStorage = new LocalStorageMock();
