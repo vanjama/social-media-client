@@ -1,29 +1,40 @@
-import { login } from "../src/js/api/auth/login";
-import { LocalStorageMock } from "../src/js/storage/localStorageMock";
+import { login } from './login';
+import { LocalStorageMock } from '../../storage/localStorage.js';
 
 global.localStorage = new LocalStorageMock();
 
-const TEST_EMAIL = "imsdal@stud.noroff.no";
-const TEST_PSW = "Imsdale1234!";
-const TEST_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9";
+const validEmail = 'myemail@stud.noroff.no';
+const invalidEmail = 'myemail@email.com';
+const password = 'Password123';
 
-const data = { email: TEST_EMAIL, password: TEST_PSW, token: TEST_TOKEN };
-
-function fetchSuccess() {
+const profile = {
+  name: 'Full Name',
+  email: validEmail,
+};
+function fetchSuccess(status = 201, statusText = 'Successful') {
   return Promise.resolve({
     ok: true,
-    status: 200,
-    statusText: "fetch OK",
-    json: () => Promise.resolve(data),
+    status,
+    statusText,
+    json: () => Promise.resolve(profile),
+  });
+}
+function fetchFailure(status = 404, statusText = 'Unsuccessful') {
+  return Promise.resolve({
+    ok: false,
+    status,
+    statusText,
   });
 }
 
-describe("login", () => {
-  it("Success", async () => {
+describe('login', () => {
+  it('Returns a valid token when provided with valid credentials', async () => {
     global.fetch = jest.fn(() => fetchSuccess());
-    const user = await login(TEST_EMAIL, TEST_PSW);
-    global.localStorage.setItem("token", TEST_TOKEN);
-    expect(user).toEqual(data);
-    expect(user.token).toEqual(global.localStorage.getItem("token"));
+    const data = await login(validEmail, password);
+    expect(data).toEqual(profile);
+  });
+  it('Returns an error when provided with invalid credentials', async () => {
+    global.fetch = jest.fn(() => fetchFailure());
+    await expect(login(invalidEmail, password)).rejects.toThrow('Unsuccessful');
   });
 });
