@@ -1,6 +1,6 @@
 import { login } from './login';
 import { LocalStorageMock } from "../mocks/storage";
-import { fetchSuccess, fetchFailure } from "../../mocks/api.js";
+
 
 global.localStorage = new LocalStorageMock();
 
